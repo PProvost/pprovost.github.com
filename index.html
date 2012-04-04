@@ -1,0 +1,19 @@
+---
+layout: default
+title: GeekNoise
+---
+{% include JB/setup %}
+
+<div id="home">
+	<div id="post">
+		<h1><a href="{{ site.posts.first.url }}">{{ site.posts.first.title }}</a></h1>
+		<div class="strap">{{ site.posts.first.date  | date: "%b %d, %Y" }}</div>
+		{{ site.posts.first.content }}
+		<p><div class="strap"><a id="more" href={{ site.posts.first.url }}#disqus>comments &raquo;</a></div>
+	</div>
+
+	<h1>Archive</h1>
+	{% for post in site.posts %}
+		<li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+	{% endfor %}
+</div>
