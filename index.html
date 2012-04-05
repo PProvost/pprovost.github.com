@@ -3,10 +3,10 @@ layout: default
 title: "GeekNoise - Home"
 ---
 
-<section class="content">
+<div class="content">
 	<ul class="listing">
 		{% for post in site.posts %}
 		<li><span>{{ post.date | date: "%B %e, %Y" }}</span></li>
 		{% endfor %}
 	</ul>
-</section>
+</div>
