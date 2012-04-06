@@ -1,8 +1,2 @@
----
----
-
-{% assign post = site.posts | first %}
-
-<h2>{{ post.title }}</h2>
-
-{{ post.content }}
+<h2>{{ site.posts | map: 'to_liquid' | map: 'title' | first }}</h2>
+{{ site.posts | first }}
