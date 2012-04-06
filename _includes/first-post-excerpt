@@ -1,2 +1,9 @@
 <h2>{{ site.posts | map: 'to_liquid' | map: 'title' | first }}</h2>
+
 {{ site.posts | first | truncatewords:150 }}
+
+<div>
+<a class="btn btn-large btn-primary" href="{{ site.posts | first | map: 'to_liquid' | map: 'url' }}">
+<i class="icon-zoom-in icon-white"></i> Read more
+</a>
+</div>
