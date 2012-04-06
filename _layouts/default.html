@@ -6,7 +6,7 @@
 		{% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
 		<meta name="author" content="{{ site.author.name }}">
 
-		<link href="assets/css/bootstrap.css" rel="stylesheet">
+		<link href="/assets/css/bootstrap.css" rel="stylesheet">
 		<style type="text/css">
 			body {
 				padding-top: 60px;
@@ -16,7 +16,7 @@
 				padding: 9px 9;
 			}
 		</style>
-		<link href="assets/css/bootstrap-responsive.css" rel='stylesheet'>
+		<link href="/assets/css/bootstrap-responsive.css" rel='stylesheet'>
 
 		<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 		<!--[if lt IE 9]>
@@ -36,7 +36,7 @@
 					<a class="brand" href="#">{{ site.title }}</a>
 					<div class="nav-collapse">
 						<ul class="nav">
-							<li class="active"><a href="#">Home</a></li>
+							<li class="active"><a href="/">Home</a></li>
 							<li><a href="#about">About</a></li>
 							<li><a href="#contact">Contact</a></li>
 						</ul>
@@ -47,18 +47,15 @@
 
 		<div class="container-fluid">
 			<div class="row-fluid">
-				<div class="span10">
+				<div class="span9">
 					{{ content }}
 				</div><!--/span-->
-				<div class="span2">
+				<div class="span3">
 					<div class="well sidebar-nav">
 						<ul class="nav nav-list">
 							<li class="nav-header">Archive</li>
-							{% for post in site.posts %}
-							<li>
-							<span>{{ post.date | date: "%B %e, %Y" }}</span> <a href="{{ post.url }}">{{ post.title }}</a>
-							</li>
-							{% endfor %}
+							{% assign posts_collate = site.posts %}
+							{% include posts_collate %}
 						</ul>
 					</div><!--/.well -->
 				</div><!--/span-->
@@ -73,19 +70,19 @@
 		</div><!--/.fluid-container-->
 
 		<!-- Placed at the end of the document so the pages load faster -->
-		<script src="assets/js/jquery.js"></script>
-		<script src="assets/js/bootstrap-transition.js"></script>
-		<script src="assets/js/bootstrap-alert.js"></script>
-		<script src="assets/js/bootstrap-modal.js"></script>
-		<script src="assets/js/bootstrap-dropdown.js"></script>
-		<script src="assets/js/bootstrap-scrollspy.js"></script>
-		<script src="assets/js/bootstrap-tab.js"></script>
-		<script src="assets/js/bootstrap-tooltip.js"></script>
-		<script src="assets/js/bootstrap-popover.js"></script>
-		<script src="assets/js/bootstrap-button.js"></script>
-		<script src="assets/js/bootstrap-collapse.js"></script>
-		<script src="assets/js/bootstrap-carousel.js"></script>
-		<script src="assets/js/bootstrap-typeahead.js"></script>
+		<script src="/assets/js/jquery.js"></script>
+		<script src="/assets/js/bootstrap-transition.js"></script>
+		<script src="/assets/js/bootstrap-alert.js"></script>
+		<script src="/assets/js/bootstrap-modal.js"></script>
+		<script src="/assets/js/bootstrap-dropdown.js"></script>
+		<script src="/assets/js/bootstrap-scrollspy.js"></script>
+		<script src="/assets/js/bootstrap-tab.js"></script>
+		<script src="/assets/js/bootstrap-tooltip.js"></script>
+		<script src="/assets/js/bootstrap-popover.js"></script>
+		<script src="/assets/js/bootstrap-button.js"></script>
+		<script src="/assets/js/bootstrap-collapse.js"></script>
+		<script src="/assets/js/bootstrap-carousel.js"></script>
+		<script src="/assets/js/bootstrap-typeahead.js"></script>
 
 
 
