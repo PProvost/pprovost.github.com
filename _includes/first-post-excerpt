@@ -1,2 +1,2 @@
 <h2>{{ site.posts | map: 'to_liquid' | map: 'title' | first }}</h2>
-{{ site.posts | first }}
+{{ site.posts | first | truncatewords:150 }}
