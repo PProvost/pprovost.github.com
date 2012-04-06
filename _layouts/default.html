@@ -47,6 +47,9 @@
 
 		<div class="container-fluid">
 			<div class="row-fluid">
+				<div class="span10">
+					{{ content }}
+				</div><!--/span-->
 				<div class="span2">
 					<div class="well sidebar-nav">
 						<ul class="nav nav-list">
@@ -59,15 +62,12 @@
 						</ul>
 					</div><!--/.well -->
 				</div><!--/span-->
-				<div class="span10">
-					{{ content }}
-				</div><!--/span-->
 			</div><!--/row-->
 
 			<hr>
 
 			<footer>
-			<p>&copy; Company 2012</p>
+				<p>&copy; {{ site.author.name }} 2012 with help from Jekyll, Jekyll Bootstrap and Twitter Bootstrap</p>
 			</footer>
 
 		</div><!--/.fluid-container-->
