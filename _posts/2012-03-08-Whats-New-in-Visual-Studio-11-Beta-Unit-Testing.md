@@ -9,6 +9,7 @@ tags:
  - tdd
  - agile development
 subtext-id: 84cc694c-4a9e-4987-9c77-22384c0cb5a2
+alias: /blog/Whats-New-in-Visual-Studio-11-Beta-Unit-Testing.aspx
 ---
 
 
@@ -75,14 +76,15 @@ If you've been exploring some of the new .NET 4.5 APIs and the new Windows 8 API
 
 One of the common things you will find yourself doing when coding with long running methods that return `Task` or `Task<T>` is wanting to "await" on the result. This is particularly true when unit testing, because you probably need the result value to test against! 
 
-In VS11 Beta, MS-Test now supports creating test methods that are marked **async **and that can therefore use the **await **keyword inside the method body. Here is an example: 
+In VS11 Beta, MS-Test now supports creating test methods that are marked **async** and that can therefore use the **await **keyword inside the method body. Here is an example: 
     
+    {% highlight csharp linenos %}
     [TestMethod]
     public async Task MyAsyncTest()
     {
        var result = await SomeLongRunningOperation();
        Assert.IsTrue( result );
-    }
+    }{% endhighlight %}
 
 (BTW, xUnit.net has also added support for async test method. Expect more to follow suit soon.) 
 
@@ -92,6 +94,7 @@ One thing that has C/C++ people very excited about this release is that we now h
 
 Here's a quick example: 
     
+    {% highlight cpp linenos %}
     #include "stdafx.h"
     #include 
     #include "..\MyProjectUnderTest\MyCodeUnderTest.h"
@@ -104,7 +107,7 @@ Here's a quick example:
           // Run a function under test here.
           ASSERT::AreEqual(expectedValue, actualValue, L"message", LINE_INFO());
        }
-    }
+    }{% endhighlight %}
 
 More information on that VS11 native unit testing can be found in the [MSDN Documentation](http://aka.ms/vs11-unit-testing-native-code). 
 
@@ -121,6 +124,7 @@ Visual Studio fakes lets you easily create tests that have this kind of isolatio
 
 When you create Stubs and Shims you provide simple delegates or lambdas for the methods implementations you care about, and we do the rest. Here's an example Stub from the MSDN docs: 
     
+		{% highlight csharp linenos %}
     [TestMethod]
     public void GetValue() 
     {
@@ -128,7 +132,7 @@ When you create Stubs and Shims you provide simple delegates or lambdas for the 
        stub.GetValueOf1 = () => 5;
        IGenericMethod target = stub;
        Assert.AreEqual(5, target.GetValue());
-    }
+    }{% endhighlight %}
 
 Creating Fakes is as easy as right-clicking on one of your project references and choosing **Add Fakes Assembly**. 
 
