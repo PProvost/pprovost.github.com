@@ -1,8 +1,26 @@
-<hr>
-
 <footer>
-<p>&copy; {{ site.author.name }} 2012 with help from Jekyll, 
-Jekyll Bootstrap, Twitter Bootstrap and too many others
-to mention.</p>
+	<div class="row" style="padding-bottom:20px">
+		<div class="span4 offset3">
+			<p>All postings/content on this blog are provided "AS IS" with no warranties, and confer no rights.</p>
+			<p>Any opinions expressed in this blog are mine and do not represent my employer or sponsors in any way.</p>
+		</div>
+		<div class="span4">
+			<div class="addthis_toolbox addthis_32x32_style addthis_vertical_style">
+				<a class="addthis_button_facebook_follow" addthis:userid="peter.provost"></a>
+				<a class="addthis_button_twitter_follow" addthis:userid="PProvost"></a>
+				<a class="addthis_button_rss_follow" addthis:url="http://http://feeds.feedburner.com/GeekNoise"></a>
+			</div>
+		</div>
+	</div>
+	<div class="row footerfooter">
+		<div class="span4" style="text-align: right;">
+			&copy; {{ site.time | date: "%Y" }} {{ site.author.name }}
+		</div>
+		<div class="span2" style="text-align:center;">
+			<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png"></a>
+		</div>
+		<div class="span4" style="text-align:left;">
+			Page rendered by Jekyll at {{ site.time }}.
+		</div>
+	</div>
 </footer>
-
