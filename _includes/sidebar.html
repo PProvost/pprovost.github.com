@@ -1,8 +1,25 @@
 <div class="well sidebar-nav">
-	<ul class="nav nav-list">
-		<li class="nav-header">Recent Posts</li>
-		{% for post in site.posts limit:4 %}
-		<li><a href="{{ post.url }}">{{ post.title }}</a></li>
-		{% endfor %}
-	</ul>
+	<div class="personal-info">
+		<img class="nav center" src="/img/Mugshot.jpg"> 
+		<div class="center" style="width:265px">
+			<a href="https://twitter.com/PProvost" class="center twitter-follow-button" data-show-count="true">Follow @PProvost</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		</div>
+	</div>
+
+	<hr>
+
+	<div>
+		<ul class="nav nav-list">
+			<li class="nav-header">Recent Posts</li>
+			{% for post in site.posts limit:4 %}
+			<li><a href="{{ post.url }}">{{ post.title }}</a></li>
+			{% endfor %}
+
+			<li class="nav-header">Categories</li>
+			{% for category in site.categories %}
+			<li><a href="#">{{ category[0] }}</a></li>
+			{% endfor %}
+		</ul>
+	</div>
 </div>
