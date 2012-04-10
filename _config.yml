@@ -9,14 +9,9 @@ pygments: true
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : Peter Provost
+title: Peter Provost
 tagline: Rants, rambles, news and notes by Peter Provost
-author :
-  name : Peter Provost
-  email : peter@provost.org
-  github : PProvost
-  twitter : PProvost
-  feedburner : GeekNoise
+author: Peter Provost
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
@@ -26,5 +21,5 @@ author :
 # Else if you are pushing to username.github.com, replace with your username.
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
-production_url : PProvost
+production_url: PProvost
 
