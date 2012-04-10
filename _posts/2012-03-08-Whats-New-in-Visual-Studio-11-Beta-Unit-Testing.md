@@ -25,7 +25,7 @@ So for Visual Studio 11, we bit the bullet and committed to changing this, so le
 
 ## The Unit Test Explorer
 
-[ {% img pull-right /img/Windows-Live-Writer/903881aa7ac7/2800560E/image_thumb.png Unit Test Explorer %} ](/img/Windows-Live-Writer/903881aa7ac7/385BCDC7/image.png)
+[![Unit Test Explorer](/img/Windows-Live-Writer/903881aa7ac7/2800560E/image_thumb.png)](/img/Windows-Live-Writer/903881aa7ac7/385BCDC7/image.png)
 
 In VS11, we have replaced the old Test View and Test Results windows with the Unit Test Explorer. This new user interface has a number of important elements that let developers quickly interact with their tests. 
 

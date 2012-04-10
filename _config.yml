@@ -5,8 +5,8 @@ permalink: /:categories/:year/:month/:day/:title
 markdown: rdiscount
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 auto: false
+safe: true
 pygments: true
-safe: false
 lsi: false
 
 # Themes are encouraged to use these universal variables 
@@ -23,5 +23,5 @@ tagline: Rants, rambles, news and notes by Peter Provost
 # Else if you are pushing to username.github.com, replace with your username.
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
-# production_url: PProvost
+production_url: PProvost
 
