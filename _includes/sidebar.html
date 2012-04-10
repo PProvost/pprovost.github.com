@@ -1,7 +1,7 @@
 <div class="well sidebar-nav">
-	<div class="personal-info">
-		<div class="nav pull-left"><img src="/img/Mugshot.jpg" width="120"></div>
-		<div class="pull-right" style="width:120px"><p><small>Peter Provost is a life-long learner, hacker, agilista, musician and Microsoft Program Manager. He lives in Colorado with his wife and two children.</small></p></div>
+	<div>
+		<img class="center" width="150" src="/img/Mugshot.jpg" >
+		<div style="width:150px" class="center"><p><small>Peter Provost is a life-long learner, hacker, agilista, musician and Microsoft Program Manager. He lives in Colorado with his wife and two children.</small></p></div>
 	</div>
 
 	<div class="center">
@@ -10,6 +10,18 @@
 	</div>
 
 	<hr>
+
+	<div class="center">
+		<script type="text/javascript">
+			google_ad_client = "ca-pub-8170807087978145";
+			google_ad_slot = "5509990499";
+			google_ad_width = 200;
+			google_ad_height = 200;
+		</script>
+		<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"> </script>
+		<hr>
+	</div>
+
 
 	<div>
 		<ul class="nav nav-list">
@@ -22,6 +34,9 @@
 			{% for category in site.categories %}
 			<li><a href="#">{{ category[0] }}</a></li>
 			{% endfor %}
+
+			<li class="nav-header">Tags</li>
+			<li>{{ tag_cloud }}</li>
 		</ul>
 	</div>
 </div>

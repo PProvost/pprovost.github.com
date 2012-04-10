@@ -7,6 +7,7 @@ tags:
  - visual studio
  - tfs
 subtext-id: 1793e45e-57d9-46b1-b9d1-1c85d7a50daa
+alias: /blog/Visual-Studio-and-TFS-2010-SP1-Released.aspx
 ---
 
 

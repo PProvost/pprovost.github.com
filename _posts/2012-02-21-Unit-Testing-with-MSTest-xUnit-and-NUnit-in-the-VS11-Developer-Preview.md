@@ -10,6 +10,7 @@ tags:
  - unit testing
  - vs11
 subtext-id: f7a6427c-e93b-4360-9e06-76e3dccd2a9d
+alias: /blog/Unit-Testing-with-MSTest-xUnit-and-NUnit-in-the-VS11-Developer-Preview.aspx
 ---
 
 

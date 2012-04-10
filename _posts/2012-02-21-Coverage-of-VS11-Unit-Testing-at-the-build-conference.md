@@ -10,6 +10,7 @@ tags:
  - unit testing
  - vs11
 subtext-id: bb7ee939-4a25-426e-8565-4208ed837582
+alias: /blog/Coverage-of-VS11-Unit-Testing-at-the-build-conference.aspx
 ---
 
 

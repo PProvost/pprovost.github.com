@@ -25,29 +25,33 @@ So for Visual Studio 11, we bit the bullet and committed to changing this, so le
 
 ## The Unit Test Explorer
 
-[![image](/assets/img/Windows-Live-Writer/903881aa7ac7/2800560E/image_thumb.png)](/assets/img/Windows-Live-Writer/903881aa7ac7/385BCDC7/image.png)In VS11, we have replaced the old Test View and Test Results windows with the Unit Test Explorer. This new user interface has a number of important elements that let developers quickly interact with their tests. 
+[ {% img pull-right /img/Windows-Live-Writer/903881aa7ac7/2800560E/image_thumb.png Unit Test Explorer %} ](/img/Windows-Live-Writer/903881aa7ac7/385BCDC7/image.png)
 
-**_Red Green Bar   
-_**This seemingly simple feature has been one of the top asks from agile developers since the beginning. Give me progress as the tests are run, changing the bar from green to red as soon as any tests fail. Simple, and now there. 
+In VS11, we have replaced the old Test View and Test Results windows with the Unit Test Explorer. This new user interface has a number of important elements that let developers quickly interact with their tests. 
 
-**_Search   
-_**Like most of the rest of VS11, we have integrated search. Search also supports using tokens, like in Windows Explorer, to search for certain kinds of things. So you might choose to add Result:"Failed" to your search string and we will limit the results to only failed tests. In the Beta you can use the Result, FilePath and FullName tokens to control your search results. 
+**_Red Green Bar_**  
+This seemingly simple feature has been one of the top asks from agile developers since the beginning. Give me progress as the tests are run, changing the bar from green to red as soon as any tests fail. Simple, and now there. 
 
-**_Most Important Tests First   
-_**Again it seems obvious when you look at it, but which tests do you care about most after a run? The ones that failed. So we float those to the top of the list, making it easy to see what you need to fix. 
+**_Search_**  
+Like most of the rest of VS11, we have integrated search. Search also supports using tokens, like in Windows Explorer, to search for certain kinds of things. So you might choose to add Result:"Failed" to your search string and we will limit the results to only failed tests. In the Beta you can use the Result, FilePath and FullName tokens to control your search results. 
 
-**_Run Details   
-_**All of the details of the run are in a pane at the bottom of the window. Quickly see how many failed, how many passed, how long the run took, etc. Click on a single test and see even more information about that test including error message, source file, stack trace and links to more information. 
+**_Most Important Tests First_**  
+Again it seems obvious when you look at it, but which tests do you care about most after a run? The ones that failed. So we float those to the top of the list, making it easy to see what you need to fix. 
+
+**_Run Details_**  
+All of the details of the run are in a pane at the bottom of the window. Quickly see how many failed, how many passed, how long the run took, etc. Click on a single test and see even more information about that test including error message, source file, stack trace and links to more information. 
 
 We are continuing to do a lot of work on this user experience, so please let us know what you think. Some of the things we're looking at right now include grouping options, more searching options and better access to specific test result information. 
 
-To read more about the Unit Test Explorer in VS11, please check out the [MSDN Documentation](http://msdn.microsoft.com/en-us/library/hh270865(v=vs.110).aspx). 
+To read more about the Unit Test Explorer in VS11, please check out the [MSDN Documentation][1].
+
+[1]: http://msdn.microsoft.com/en-us/library/hh270865(v=vs.110).aspx
 
 ## Support For 3rd Party Frameworks
 
 But even before tackling the UI issues, we knew we had to support 3rd party test frameworks. To enable this, we created a new test _meta-runner_. This is a layer that simply coordinates and controls the flow of data between the user interface and the underlying test frameworks. The architecture of it looks something like this. 
 
-![image](/assets/img/Windows-Live-Writer/903881aa7ac7/74C41CA4/image18.png)
+![image](/img/Windows-Live-Writer/903881aa7ac7/74C41CA4/image18.png)
 
 Using simple plugin adapters, third party test frameworks can plug into the test platform layer and get the full experience of running inside of Visual Studio. One of our design goals for this has been to make sure the test frameworks didn't have to do an insane amount of work to get this integration and if you look at the source for some of the [adapters that have already been released](http://aka.ms/msdn-vs11-unit-test-plugins), you will see we succeeded. 
 
@@ -55,7 +59,9 @@ These adapters simply have to translate commands like "discover tests" and "run 
 
 The best part of all is that since these frameworks are all running the same way, they all get the same experiences in the IDE including things like Debugging support, Code Coverage and the new Fakes framework (more on that in a minute). 
 
-To learn about finding and installing plugins for third-party test frameworks, see the [MSDN Documentation](http://msdn.microsoft.com/en-us/library/hh598952(v=vs.110).aspx). 
+To learn about finding and installing plugins for third-party test frameworks, see the [MSDN Documentation][2]. 
+
+[2]: http://msdn.microsoft.com/en-us/library/hh598952(v=vs.110).aspx
 
 ## MS-Test Improvements
 
@@ -63,8 +69,8 @@ But we also haven't ignored the built-in Visual Studio Unit Testing framework (a
 
 There were a couple of low hanging fruit that we tackled: 
 
-  * Performance and scale improvements - more tests faster is a good thing 
-  * Proper support for .NET 64-bit and multi-targeting 
+* Performance and scale improvements - more tests faster is a good thing 
+* Proper support for .NET 64-bit and multi-targeting 
 
 Also, you can rest assured that your VS2010 Test Projects will continue to work in VS11, and in fact, can go back and forth without issue. 
 
@@ -74,18 +80,19 @@ But we also added some new things!
 
 If you've been exploring some of the new .NET 4.5 APIs and the new Windows 8 APIs, you probably have noticed a bunch of methods are using the new Task Async Pattern (TAP) first introduced in the Task Parallel Library. 
 
-One of the common things you will find yourself doing when coding with long running methods that return `Task` or `Task<T>` is wanting to "await" on the result. This is particularly true when unit testing, because you probably need the result value to test against! 
+One of the common things you will find yourself doing when coding with long running methods that return Task or Task<T> is wanting to "await" on the result. This is particularly true when unit testing, because you probably need the result value to test against! 
 
-In VS11 Beta, MS-Test now supports creating test methods that are marked **async** and that can therefore use the **await **keyword inside the method body. Here is an example: 
-    
-    {% highlight csharp linenos %}
+In VS11 Beta, MS-Test now supports creating test methods that are marked **async **and that can therefore use the **await **keyword inside the method body. Here is an example: 
+
+{% highlight csharp linenos %}
     [TestMethod]
     public async Task MyAsyncTest()
     {
-       var result = await SomeLongRunningOperation();
-       Assert.IsTrue( result );
-    }{% endhighlight %}
-
+        var result = await SomeLongRunningOperation();
+        Assert.IsTrue( result );
+    }
+{% endhighlight %}
+  
 (BTW, xUnit.net has also added support for async test method. Expect more to follow suit soon.) 
 
 ### Native Unit Testing Support
@@ -93,21 +100,23 @@ In VS11 Beta, MS-Test now supports creating test methods that are marked **async
 One thing that has C/C++ people very excited about this release is that we now have a true native unit testing framework in the box. No longer will you be required to either use the dreaded "/clr" flag or fall back to 3rd party frameworks for your C++ unit testing. 
 
 Here's a quick example: 
-    
-    {% highlight cpp linenos %}
+
+{% highlight cpp linenos %}
     #include "stdafx.h"
     #include 
     #include "..\MyProjectUnderTest\MyCodeUnderTest.h"
     using namespace Microsoft::VisualStudio::CppUnitTestFramework;
+    
     TEST_CLASS(TestClassName)
     {
     public:
-       TEST_METHOD(TestMethodName)
-       {
-          // Run a function under test here.
-          ASSERT::AreEqual(expectedValue, actualValue, L"message", LINE_INFO());
-       }
-    }{% endhighlight %}
+        TEST_METHOD(TestMethodName)
+        {
+            // Run a function under test here.
+            ASSERT::AreEqual(expectedValue, actualValue, L"message", LINE_INFO());
+        }
+    }
+{% endhighlight %}
 
 More information on that VS11 native unit testing can be found in the [MSDN Documentation](http://aka.ms/vs11-unit-testing-native-code). 
 
@@ -123,16 +132,20 @@ Visual Studio fakes lets you easily create tests that have this kind of isolatio
 * **Shims** are run-time method interceptors. With Shims you can provide your own implementation for almost any method available to your code in .NET, and that includes types and methods from the .NET base class libraries. 
 
 When you create Stubs and Shims you provide simple delegates or lambdas for the methods implementations you care about, and we do the rest. Here's an example Stub from the MSDN docs: 
-    
-		{% highlight csharp linenos %}
+
+{% highlight csharp linenos %}
     [TestMethod]
-    public void GetValue() 
+    public void GetValue()
     {
-       var stub = new StubIGenericMethod();
-       stub.GetValueOf1 = () => 5;
-       IGenericMethod target = stub;
-       Assert.AreEqual(5, target.GetValue());
-    }{% endhighlight %}
+        // Arrange
+        var stub = new StubIGenericMethod();
+        stub.GetValueOf1 = () => 5;
+        IGenericMethod target = stub;
+
+        // Act, Assert
+        Assert.AreEqual(5, target.GetValue());
+    }
+{% endhighlight %}
 
 Creating Fakes is as easy as right-clicking on one of your project references and choosing **Add Fakes Assembly**. 
 
