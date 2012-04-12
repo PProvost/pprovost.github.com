@@ -4,16 +4,16 @@ permalink: /:categories/:year/:month/:day/:title
 
 markdown: rdiscount
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-auto: false
+auto: true
 safe: true
-pygments: true
+pygments: false
 lsi: false
 
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
 title: Peter Provost
-tagline: Rants, rambles, news and notes by Peter Provost
+tagline: Rants, rambles, news and notes
 author: Peter Provost
 
 # The production_url is only used when full-domain names are needed
